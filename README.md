@@ -242,7 +242,7 @@ Completed map outputs are written to the `maps/` directory and chart outputs to 
 @misc{zerohour2026,
   title        = {Zero Hour Atlas: Satellite Derived Mapping of Early Warning Last Mile
                   Reach Gaps in the Jamuna Padma Char Corridor, Bangladesh},
-  author       = {[Author Name]},
+  author       = {[Md Sabbir Islam]},
   year         = {2026},
   howpublished = {RIMES Mapathon 2026},
   note         = {Theme 01: Geospatial Data for Disaster Risk Assessment}
@@ -258,7 +258,7 @@ This project is released under the [MIT License](LICENSE).
 ```
 MIT License
 
-Copyright (c) 2026 [Author Name]
+Copyright (c) 2026 [Md Sabbir Islam]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
