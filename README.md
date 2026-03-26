@@ -23,7 +23,7 @@ This project was developed as a contribution to the RIMES Mapathon 2026, Theme 0
 
 ## Key Findings
 
-### Table 1 — Summary Statistics
+### Table 1  Summary Statistics
 
 | Metric | Value |
 |--------|-------|
@@ -40,7 +40,7 @@ This project was developed as a contribution to the RIMES Mapathon 2026, Theme 0
 | Average days isolated per year (critical points) | 347 |
 | Sentinel-1 images processed | ~160+ (2017–2024) |
 
-### Table 2 — Settlement ZHI Scores
+### Table 2 Settlement ZHI Scores
 
 | Settlement | ZHI Score | Class | Days Isolated/yr |
 |---|---|---|---|
@@ -131,11 +131,11 @@ All cartographic outputs were produced in QGIS 3.x and are stored in the `maps/`
 
 ### Detailed Map Notes
 
-**MAP01 — ZHI Results Map:** This is the primary results map of the project, displaying the spatial distribution of the five-class ZHI classification across the study area. The raster background encodes flood hazard intensity from the Sentinel-1 derived flood frequency analysis, with cooler blue tones indicating lower hazard and red indicating very high hazard. The 59 green settlement analysis points represent the locations at which ZHI scores were calculated, and the triangular tower symbols provide immediate visual identification of which towers lie in flood-risk zones. The study area boundary (red dashed line) corresponds to the Kazipur–Doulatdiya administrative corridor. The inset map situates the study area within Bangladesh for geographic context. Projection is EPSG:3857 (Web Mercator).
+**MAP01 ZHI Results Map:** This is the primary results map of the project, displaying the spatial distribution of the five-class ZHI classification across the study area. The raster background encodes flood hazard intensity from the Sentinel-1 derived flood frequency analysis, with cooler blue tones indicating lower hazard and red indicating very high hazard. The 59 green settlement analysis points represent the locations at which ZHI scores were calculated, and the triangular tower symbols provide immediate visual identification of which towers lie in flood-risk zones. The study area boundary (red dashed line) corresponds to the Kazipur–Doulatdiya administrative corridor. The inset map situates the study area within Bangladesh for geographic context. Projection is EPSG:3857 (Web Mercator).
 
-**MAP02 — ZHI Bubble Composite:** This map communicates the magnitude of ZHI scores and isolation durations simultaneously through scaled circular bubble markers. Larger bubbles indicate higher ZHI scores and longer estimated isolation periods, enabling viewers to rapidly identify the most severely affected settlements. The raster background shows ZHI classification colours (blue for EWS Connected, graduating through yellow, gold, and orange to red for Critical Zero Hour). White or grey unfilled circles denote analysis points that fall outside the service range of any mobile tower (dead zones). The combination of bubble size, fill colour, and background raster provides a multi-dimensional view of the compound failure condition.
+**MAP02 ZHI Bubble Composite:** This map communicates the magnitude of ZHI scores and isolation durations simultaneously through scaled circular bubble markers. Larger bubbles indicate higher ZHI scores and longer estimated isolation periods, enabling viewers to rapidly identify the most severely affected settlements. The raster background shows ZHI classification colours (blue for EWS Connected, graduating through yellow, gold, and orange to red for Critical Zero Hour). White or grey unfilled circles denote analysis points that fall outside the service range of any mobile tower (dead zones). The combination of bubble size, fill colour, and background raster provides a multi-dimensional view of the compound failure condition.
 
-**MAP06 — Mobile Tower Vulnerability:** This map focuses specifically on the telecommunications infrastructure failure dimension of the Zero Hour framework. Towers are individually labelled by their network generation (2G, 3G, or 4G) to convey both connectivity capacity and likely ownership structure. The distinction between white triangle (safe) and red X (flood-risk) symbols provides an immediate assessment of which towers are likely to fail simultaneously with a flood event. The summary inset box—showing 25 total towers, 10 flood-risk, and 25 dead-zone points—allows readers to grasp the coverage deficit without detailed map reading.
+**MAP06 Mobile Tower Vulnerability:** This map focuses specifically on the telecommunications infrastructure failure dimension of the Zero Hour framework. Towers are individually labelled by their network generation (2G, 3G, or 4G) to convey both connectivity capacity and likely ownership structure. The distinction between white triangle (safe) and red X (flood-risk) symbols provides an immediate assessment of which towers are likely to fail simultaneously with a flood event. The summary inset box—showing 25 total towers, 10 flood-risk, and 25 dead-zone points—allows readers to grasp the coverage deficit without detailed map reading.
 
 ---
 
@@ -143,14 +143,14 @@ All cartographic outputs were produced in QGIS 3.x and are stored in the `maps/`
 
 Follow these steps to reproduce the Zero Hour Atlas analysis from scratch using the open-data pipeline.
 
-**Step 1 — Clone the repository:**
+**Step 1 Clone the repository:**
 
 ```bash
 git clone https://github.com/[username]/zero-hour-atlas
 cd zero-hour-atlas
 ```
 
-**Step 2 — Install Python dependencies:**
+**Step 2 Install Python dependencies:**
 
 ```bash
 pip install -r requirements.txt
@@ -158,7 +158,7 @@ pip install -r requirements.txt
 
 The `requirements.txt` file includes: `earthengine-api`, `geemap`, `geopandas`, `rasterio`, `fiona`, `shapely`, `matplotlib`, `seaborn`, `pandas`, `numpy`, `scipy`, `jupyter`, and `folium`.
 
-**Step 3 — Authenticate with Google Earth Engine:**
+**Step 3 Authenticate with Google Earth Engine:**
 
 ```bash
 earthengine authenticate
@@ -166,7 +166,7 @@ earthengine authenticate
 
 You will need a valid Google Earth Engine account. Authentication opens a browser window for OAuth confirmation. After completing authentication, the credentials are stored locally and used automatically by the analysis notebook.
 
-**Step 4 — Launch the analysis notebook:**
+**Step 4 Launch the analysis notebook:**
 
 ```bash
 jupyter notebook Zero_Hour_Atlas_Analysis.ipynb
@@ -174,7 +174,7 @@ jupyter notebook Zero_Hour_Atlas_Analysis.ipynb
 
 The notebook is structured into sequential sections corresponding to each sub-index (PHI, ANI, SRI), the ZHI composite calculation, and the cartographic output generation. Each cell includes inline comments documenting the logic and data transformations applied.
 
-**Step 5 — Input data:**
+**Step 5 Input data:**
 
 All input data files are stored in the `data/` directory and are either included directly in the repository (vector and tabular data) or downloaded automatically by the notebook from public APIs (Sentinel-1, Sentinel-2 via GEE; OSM via Overpass API). Ensure that the following files are present before running the notebook:
 
@@ -184,7 +184,7 @@ data/settlements_indexed.csv
 data/towers.csv
 ```
 
-**Step 6 — Review outputs:**
+**Step 6 Review outputs:**
 
 Completed map outputs are written to the `maps/` directory and chart outputs to the `charts/` directory. The notebook's final cells export both PNG and GeoTIFF versions of the raster outputs. Scored settlement data is written to `data/settlements_scored.csv` and summary statistics to `data/summary_statistics.csv`.
 
@@ -204,11 +204,11 @@ Completed map outputs are written to the `maps/` directory and chart outputs to 
 
 ## Policy Recommendations
 
-**1. Elevated community FM broadcast towers in Critical Zero Hour chars.** The analysis identifies 11 settlements in the Critical Zero Hour class, all with ZHI scores above 75 and an average of 347 days of road isolation per year. For these communities, mobile network connectivity is structurally unreliable during flood events regardless of tower density, because the towers themselves are at flood risk. A resilient alternative is dedicated elevated FM radio broadcast infrastructure—towers mounted above 8 m above high-water datum (AHD)—connected to district-level meteorological alert systems. FM radio receivers are low-cost, require no data connectivity, and function during power outages with battery backup. Such infrastructure should be integrated into the existing BDRCS and BMD early warning dissemination framework.
+**1. Elevated community FM broadcast towers in Critical Zero Hour chars.** The analysis identifies 11 settlements in the Critical Zero Hour class, all with ZHI scores above 75 and an average of 347 days of road isolation per year. For these communities, mobile network connectivity is structurally unreliable during flood events regardless of tower density, because the towers themselves are at flood risk. A resilient alternative is dedicated elevated FM radio broadcast infrastructure towers mounted above 8 m above high-water datum (AHD) connected to district-level meteorological alert systems. FM radio receivers are low-cost, require no data connectivity, and function during power outages with battery backup. Such infrastructure should be integrated into the existing BDRCS and BMD early warning dissemination framework.
 
 **2. SMS-independent last-mile warning protocols.** Policy frameworks for last-mile EWS delivery in the Jamuna-Padma corridor should explicitly specify redundant protocols that do not depend on SMS or data network availability. Siren relay systems (sequential siren activation across char settlement clusters), boat runner networks (designated community volunteers with predefined alert routes), and megaphone-equipped community response teams represent proven, low-technology alternatives that have been deployed effectively in comparable delta environments in Vietnam and Myanmar. Formalising these protocols within union-level disaster management plans and funding their annual training and equipment maintenance would substantially reduce Zero Hour exposure at zero dependence on telecommunications infrastructure.
 
-**3. HAPS pilot for monsoon-season continuous coverage.** High-Altitude Platform Stations (HAPS)—stratospheric aircraft or balloons operating at 15–25 km altitude—offer a technologically credible pathway to providing continuous broadband and narrowband telecommunications coverage over flood-isolated regions during the monsoon season. Unlike satellite-based systems, HAPS can be regionally deployed and repositioned in response to forecast flood events, providing targeted coverage precisely over areas where ground-based infrastructure has failed. A RIMES-coordinated pilot of HAPS-based emergency communications over the Jamuna-Padma corridor during one monsoon season would provide critical empirical data on feasibility, latency, and coverage reliability.
+**3. HAPS pilot for monsoon-season continuous coverage.** High-Altitude Platform Stations (HAPS) stratospheric aircraft or balloons operating at 15–25 km altitude offer a technologically credible pathway to providing continuous broadband and narrowband telecommunications coverage over flood-isolated regions during the monsoon season. Unlike satellite-based systems, HAPS can be regionally deployed and repositioned in response to forecast flood events, providing targeted coverage precisely over areas where ground-based infrastructure has failed. A RIMES-coordinated pilot of HAPS-based emergency communications over the Jamuna-Padma corridor during one monsoon season would provide critical empirical data on feasibility, latency, and coverage reliability.
 
 **4. Annual GEE-automated ZHI recalculation.** The Zero Hour Atlas pipeline is designed for annual update with minimal manual intervention. The GEE scripts can be triggered automatically using the Earth Engine API to ingest the latest Sentinel-1 imagery, recompute flood frequency surfaces, and regenerate ZHI scores for all 59 analysis points. Integrating this recalculation into the RIMES annual geospatial monitoring cycle would enable real-time tracking of infrastructure gap dynamics as char morphology evolves, towers are added or removed, and roads are constructed or eroded. This provides a systematic, evidence-based foundation for annual infrastructure investment prioritisation and EWS coverage gap closure reporting.
 
