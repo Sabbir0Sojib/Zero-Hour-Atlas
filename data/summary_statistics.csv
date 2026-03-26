@@ -1,0 +1,15 @@
+Metric,Value
+Study area (km²),1225.2
+Total analysis points,59
+Critical Zero Hour (ZHI≥75),1
+Severe isolation (ZHI 55–75),5
+Total mobile towers,25
+Flood-risk towers,10
+Avg days isolated (critical pts),260
+Max flood frequency,0.912
+Mean flood frequency,0.392
+Total erosion 2017-2025 (km²),43.5
+Total accretion 2017-2025 (km²),11.4
+Net land change (km²),-32.1
+Sentinel-1 images used,~160+ (2017-2024)
+Data sources,S1/S2 GEE · OSM · OpenCelliD · SRTM · GADM v4.1
